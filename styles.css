@@ -75,7 +75,7 @@ transition: 1s;
 font-family: 'Kanit', sans-serif;
 }
 .content h1:hover{
-color: var(--btn-bg);
+color: #22409A;
 -webkit-text-stroke: 0px ;
 transition: 1s;
 }
