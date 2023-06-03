@@ -35,76 +35,91 @@
 * {
     box-sizing: border-box;
   }
-  
-  .column {
-    width: 47%;
-    padding: 10px;
-    padding-right: 10px;
-    padding-left: 10px;
-    float: left;
-    border-top-left-radius: 10px;
-    border-bottom-right-radius: 10px;
-    border-bottom-left-radius: 55px;
-    border-top-right-radius: 55px;
-    align-items: center;
-    text-align: center;
-    height: 300px; /* Should be removed. Only for demonstration */
-  }
-  
-  .row:after {
-    content: "";
-    display: table;
-    clear: both;
-    text-align: center;
-  }
-  
-  @media screen and (max-width: 768px) {
-    .column {
-      width: 100%;
-      align-items: center;
-      background-repeat: no-repeat;
-      margin-bottom: 20px;
-    }
-  }
-  @media screen and (max-width: 1440px) {
-  }
-  .column h2{
-    transform: translateY(225px);
-    background: linear-gradient(to right,rgba(255,128,0,0.5),rgba(255, 21, 0, 0.5));
-    width: fit-content;
-    color: white;
-  }
-  .column p{
-    transform: translateY(205px);
-    background: linear-gradient(to right,rgba(0, 0, 0, 1));
+  .panel-wrap {
     width: 100%;
-    color: white;
-  }
+    background: transparent;
+    overflow: hidden;
+    margin-top: 20px;
+}
+.panel-wrapper {
+    width: 960px;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-top: 60px;
+    padding-bottom: 60px;
+}
+.panel-wrapper .panel {
+    width: 260px;
+    background: #ff000050;
+    float: left;
+    padding: 20px;
+    border-radius: 20px;
+}
+.panel {
+    overflow: hidden;
+}
+.marRight30 {
+    margin-right: 30px;
+}
+.panel-wrapper .panel {
+    width: 260px;
+    background: #ff000050;
+    float: left;
+    padding: 20px;
+}
+
+.panel {
+    overflow: hidden;
+}
+img {
+    border: none;
+}
+.panel-wrapper .border {
+    border-bottom: 1px solid #dadacb;
+}
     </style>
     <br>
     <br>
-<div class="row">
-    <div class="column" style="background-image:url('https://prod-mfp-imgsrv.tillitsdone.com/uploads/medium_learning_education_ideas_insight_intelligence_study_concept_c9d4512e5f.jpg'); background-position: center;margin-right: 20px;">
-      <h2>ด้านการศึกษา</h2>
-      <p>รายละเดียด</p>
-    </div>
-    <div class="column" style="background-image:url('https://prod-mfp-imgsrv.tillitsdone.com/uploads/medium_digital_screen_with_environment_day_10179fe83a.jpg');">
-      <h2>ด้านกิจกรรม</h2>
-      <p>รายละเดียด</p>
-    </div>
-  </div>
-  <br>
-  <!-- บรรทัด 2 -->
-<div class="row">
-    <div class="column" style="background-image:url('https://media-public.canva.com/tRYWY/MADyQ2tRYWY/1/s2.jpg'); background-position: center;margin-right: 20px;">
-      <h2>ด้านสาธารณสุข(สุขา)</h2>
-      <p>รายละเดียด</p>
-    </div>
-    <div class="column" style="background-image:url('https://ptp.or.th/wp-content/uploads/2023/03/17-.jpg');">
-      <h2>สิทธิและความหลากหลายทางเพศ</h2>
-      <p>รายละเดียด</p>
-    </div>
-  </div>
+<div class="panel-wrap">
+        <div class="panel-wrapper">
+          <div class="panel marRight30">
+            <div class="img">
+                <img style="width: 100%;height: 10rem;" src="https://prod-mfp-imgsrv.tillitsdone.com/uploads/medium_learning_education_ideas_insight_intelligence_study_concept_c9d4512e5f.jpg" alt="website template image"></div>
+            <div class="title">
+              <h1>ด้านการศึกษาและที่ปรึกษา</h1>
+            </div>
+            <div class="border"></div>
+            <div class="content">
+              <p>รายละเอียด</p>
+              <div class="button-link"><a></a></div>
+            </div>
+          </div>
+          <div class="panel marRight30">
+            <div class="img">
+                <img style="width: 100%;height: 10rem;" src="https://prod-mfp-imgsrv.tillitsdone.com/uploads/medium_digital_screen_with_environment_day_10179fe83a.jpg" alt="website template image"></div>
+            <div class="title">
+              <h1 class="border-bottom">ด้านกิจกรรมและนันทนาการ</h1>
+            </div>
+            <div class="border"></div>
+            <div class="content">
+              <p>รายละเอียด</p>
+              <div class="button-link"><a></a></div>
+            </div>
+          </div>
+          <div class="panel">
+            <div class="img">
+                <img style="width: 100%;height: 10rem;" src="https://media-public.canva.com/tRYWY/MADyQ2tRYWY/1/s2.jpg" alt="website template image"></div>
+            <div class="title">
+              <h1 class="border-bottom">ด้านสาธารณสุข (สุขา)</h1>
+            </div>
+            <div class="border"></div>
+            <div class="content">
+              <p>รายละเอียด</p>
+              <div class="button-link"><a></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
     <br>
 
     <!-- footer -->
