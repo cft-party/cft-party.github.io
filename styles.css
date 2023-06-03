@@ -27,7 +27,7 @@ font-family: var(--txt-font);
 --footbar-bg: #ff7f00;
 --colophon-bg: #ff6a00;
 --red: #FF0000;
---redorange: linear-gradient(var(--colophon-bg),var(--red));
+--redorange: linear-gradient(to top,var(--colophon-bg),var(--red),var(--red));
 }
 .hero{
 width:100%;
@@ -313,6 +313,7 @@ background: -webkit-linear-gradient(-45deg, #ff5500 0%, #ff9100 100%);
 .btn, a.btn {
 border-radius: 0;
 }
+
 .btn, a.btn {
 color: #fff;
 background-color: var(--btn-bg);
@@ -472,7 +473,7 @@ sp {
     line-height: 1.3 !important;
 }
 .h6 {
-    font-size: 2.2em !important;
+    font-size: 2em !important;
 }
 
 ._heading, .btn, .button, .menu, blockquote, button, h1, h2, h3, h4, h5, h6, nav {
