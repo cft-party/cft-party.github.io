@@ -110,6 +110,7 @@ color: #fff;
 text-shadow: none;
 }
 @media screen and (min-width:1024px){
+
 }
 @media screen and (max-width:1024px){
 .content h1{
@@ -127,6 +128,9 @@ border: 3px solid var(--red);
 }
 nav ul li a{
 font-size: 14px;
+}
+.h6 {
+    font-size: 1.5em !important;
 }
 }
 
@@ -181,6 +185,10 @@ font-size:6px;
 .back-img{
 width: auto;
 height: 100%;
+}
+
+.h6 {
+    font-size: 1em !important;
 }
 }
 .bg-fixed {
