@@ -27,6 +27,7 @@ font-family: var(--txt-font);
 --footbar-bg: #ff7f00;
 --colophon-bg: #ff6a00;
 --red: #FF0000;
+--redorange: linear-gradient(var(--colophon-bg),var(--red));
 }
 .hero{
 width:100%;
@@ -339,11 +340,11 @@ div {
 display: block;
 }
 .site-footer {
-background-color: var(--colophon-bg);
+background-color: transparent;
 }
 body
 {
-background: var(--colophon-bg);
+background: var(--redorange);
 }
 .s-container {
 margin-right: auto;
@@ -370,7 +371,7 @@ padding-right: 20px;
 color: #fff;
 }
 #footbar {
-background: #ff0000;
+background: var(--redorange);
 }
 .b7 {
 font-weight: 700 !important;
