@@ -1,6 +1,9 @@
 body{
     overflow-x: hidden;
 }
+.cont-pd h2:hover{
+    color: #22409A;
+}
 *{
 margin:0;
 padding:0;
