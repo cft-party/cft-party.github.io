@@ -371,7 +371,7 @@ padding-right: 20px;
 color: #fff;
 }
 #footbar {
-background: var(--redorange);
+background: transparent;
 }
 .b7 {
 font-weight: 700 !important;
