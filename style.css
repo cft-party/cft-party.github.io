@@ -47,6 +47,11 @@ display: flex;
 align-items: center;
 justify-content: space-between;
 }
+
+nav .logo{
+width: 110px;
+}
+
 .back-img{
 width: 100%;
 }
