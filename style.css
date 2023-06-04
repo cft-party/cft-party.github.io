@@ -29,7 +29,7 @@ font-family: var(--txt-font);
 .hero{
 width:100%;
 height:100vh;
-background-image: linear-gradient(rgba(233, 21, 21, 0.3),rgba(255,112,13,0.3));
+background-image: linear-gradient(rgba(233, 21, 21, 0.09),rgba(255,112,13,0.09));
 position:relative;
 padding: 0 5%;
 display:flex;
