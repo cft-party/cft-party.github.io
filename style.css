@@ -1,0 +1,38 @@
+*{
+margin:0;
+padding:0;
+box-sizing: border-box;
+font-family: var(--txt-font);
+}
+
+:root {
+--ci1: #ff6a00;
+--ci2: #ff7f00;
+--ci3: #003057;
+--ci4: #0f5186;
+--ci5: #001d42;
+--link: #ff6a00;
+--link-hover: #ff7f00;
+--btn-bg: #ff6a00;
+--btn-bg-hover: #ff7f00;
+--nav-link: #ff6a00;
+--nav-hover: #ff6a00;
+--bg-color: #ffffff;
+--text-color: #333;
+--txt-font: "Anakotmai",-apple-system, BlinkMacSystemFont, sans-serif;
+--pmr-font: "AnakotmaiWeb",-apple-system, BlinkMacSystemFont,"HelveticaNeue-Medium", "Helvetica Neue Medium", "Helvetica Neue", Helvetica, Arial, sans-serif;
+--footbar-bg: #ff7f00;
+--colophon-bg: #ff6a00;
+--red: #FF0000;
+--redorange: linear-gradient(to top,var(--colophon-bg),var(--red),var(--red));
+}
+.hero{
+width:100%;
+height:100vh;
+background-image: linear-gradient(rgba(233, 21, 21, 0.3),rgba(255,112,13,0.3));
+position:relative;
+padding: 0 5%;
+display:flex;
+align-items: center;
+justify-content: center;
+}
