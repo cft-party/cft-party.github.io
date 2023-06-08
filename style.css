@@ -347,13 +347,15 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     padding: 0 4px;
     vertical-align: middle;
 }
-<style>
 .a2a_kit a {
     cursor: pointer;
     transition: none;
 }
 a, a:hover {
     color: #214099;
+}
+a{
+    color: #fff;
 }
 a {
     text-decoration: none;
@@ -365,7 +367,7 @@ a {
     display: inline-block;
     opacity: 1;
 }
-<style>
+
 .a2a_kit .a2a_svg {
     background-repeat: repeat;
 }
@@ -377,7 +379,6 @@ a {
     display: inline-block;
     float: none;
 }
-<style>
 .a2a_svg {
     background-repeat: no-repeat;
     display: block;
@@ -497,10 +498,10 @@ div {
     margin: 0;
     padding: 0 0 0 20px;
 }
-dl, ol, ul {
+.footer ul {
     margin-top: 0;
 }
-address, dl, ol, ul {
+.footer ul {
     margin-bottom: 1rem;
 }
 
