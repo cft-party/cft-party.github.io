@@ -195,7 +195,7 @@ body footer {
     -ms-flex-positive: 1;
     flex-grow: 1;
 }
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure, footer, header, hgroup, main, section {
     display: block;
 }
 
@@ -276,7 +276,7 @@ img {
     width: 100%;
     margin-top: 30px;
 }
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure, footer, header, hgroup, main, section {
     display: block;
 }
 .footer h3 {
@@ -322,7 +322,7 @@ p {
     width: 100%;
     margin-top: 30px;
 }
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure, footer, header, hgroup, main, section {
     display: block;
 }
 
@@ -352,7 +352,7 @@ article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
     transition: none;
 }
 a, a:hover {
-    color: #214099;
+    color: #fff;
 }
 a{
     color: #fff;
@@ -472,16 +472,13 @@ img, svg {
     width: 100%;
     margin-top: 30px;
 }
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
-    display: block;
-}
 
 
 .footer .widget {
     width: 100%;
     margin-top: 30px;
 }
-article, aside, figcaption, figure, footer, header, hgroup, main, nav, section {
+article, aside, figcaption, figure, footer, header, hgroup, main, section {
     display: block;
 }
 
