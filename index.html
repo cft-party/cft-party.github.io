@@ -130,8 +130,8 @@
     
   <!--Fratures-->
 
-  <section id="feature">
-    <div class="title-text">
+  <section id="feature " class="reveal">
+    <div class="title-text ">
       <p style="font-family: 'Anuphan', sans-serif; color: #ED0700 ;">เพื่อสร้างอนาคตไทยคือ<u style="color: #FF914D ;">ความหวัง</u></p>
       <h1 style="font-family: 'Anuphan', sans-serif;">เปลี่ยนความฝันเป็น<u style="color: var(--rd);">ความจริง</u></h1>
     </div>
@@ -173,7 +173,7 @@
 
 <!-- สมัครงาน -->
 
-  <section id="member" style="height: auto;">
+  <section id="member" style="height: auto;" class="reveal">
     <div class="title-text">
       <p style="font-family: 'Anuphan', sans-serif; color: #ED0700 ;">รวม<b  style="color: #ff6f00 ;">พลังประชาชน</b></p>
       <h1 style="font-family: 'Anuphan', sans-serif;">สร้างพรรคของ<u style="color: var(--rd);">ประชาชน</u></h1>
@@ -330,7 +330,7 @@
 
 <!-- สมัครงาน -->
 
-<section id="policy" style="height: auto; display: none;">
+<section id="policy" style="height: auto; display: none;"  class="reveal">
     <div class="title-text">
       <p style="font-family: 'Anuphan', sans-serif; color: #ED0700 ;">รวม<b  style="color: #ff6f00 ;">นโยบาย</b></p>
       <h1 style="font-family: 'Anuphan', sans-serif;">เพื่อ<u style="color: var(--rd);">ประชาชน</u></h1>
@@ -552,3 +552,23 @@
           }
     
     </style>
+<script>
+    function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+
+  for (var i = 0; i < reveals.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+</script>
