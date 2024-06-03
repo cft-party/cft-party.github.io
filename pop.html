@@ -141,11 +141,10 @@ main[data-v-d2e773b6] {
 }
     </style>
 </head>
-<body>
+<body  id="click" class="btn">
     <script>
         const $display = document.getElementById("display");
         const $click = document.getElementById("click");
-        const $reset = document.getElementById("reset");
     
         let count = 0;
     
@@ -159,15 +158,11 @@ main[data-v-d2e773b6] {
           save();
         });
     
-        $reset.addEventListener("click", function () {
-          count = 0;
-          save();
-        });
-    
         if (localStorage.getItem("count")) {
           count = parseInt(localStorage.getItem("count"));
           save();
         }
+        
       </script>
     <!-- <main class="output">
         <div class="couter">
@@ -176,7 +171,7 @@ main[data-v-d2e773b6] {
           <button id="reset" class="btn">Reset</button>
         </div>
       </main> -->
-    <section id="click" class="btn">
+    <section>
         <main data-v-d2e773b6>
             <div data-v-d2e773b6="" class="main-wrap">
                 <div class="list">
