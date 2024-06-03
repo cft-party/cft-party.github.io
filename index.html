@@ -613,6 +613,7 @@
 <script>
     function reveal() {
   var reveals = document.querySelectorAll(".reveal");
+  var lefts = document.querySelectorAll(".left");
 
   for (var i = 0; i < reveals.length; i++) {
     var windowHeight = window.innerHeight;
@@ -621,33 +622,15 @@
 
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");
+      lefts[i].classList.add("active");
     } else {
-      reveals[i].classList.remove("active");
+      reveals[i].classList.add("active");
+      lefts[i].classList.add("active");
     }
   }
 }
 
 window.addEventListener("scroll", reveal);
-
-</script>
-<script>
-    
-    function left() {
-  var lefts = document.querySelectorAll(".left");
-
-  for (var i = 0; i < lefts.length; i++) {
-    var windowHeight = window.innerHeight;
-    var elementTop = lefts[i].getBoundingClientRect().top;
-    var elementVisible = 1920;
-
-    if (elementTop < windowHeight - elementVisible) {
-      lefts[i].classList.add("active");
-    } else {
-      lefts[i].classList.remove("active");
-    }
-  }
-}
-
 window.addEventListener("scroll", left);
 
 </script>
