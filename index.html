@@ -168,8 +168,8 @@
     </div>
     <div class="feature-box">
       <div class="features">
-        <h1 class="left" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>วิสัยทัศน์พรรค</b></h1>
-        <div class="features-desc left" >
+        <h1 class="reveal" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>วิสัยทัศน์พรรค</b></h1>
+        <div class="features-desc reveal" >
           <div class="features-icon">
             <i class="fa fa-shield"></i>
           </div>
@@ -177,8 +177,8 @@
             <p style="font-family: 'Anuphan', sans-serif; color: #000; font-size: 22px;"><small>ความเชื่อมั่น ความมั่นคง ความอิสระ ความจริงใจ ความน่าเชื่อถือ เป็น </small><b><u style="cursor: pointer; color: var(--rd)">หัวใจของพรรค</u></b></p>
           </div>
         </div>
-        <h1 class="left" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>อุดมการณ์</b></h1>
-        <div class="features-desc left">
+        <h1 class="reveal" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>อุดมการณ์</b></h1>
+        <div class="features-desc reveal">
           <div class="features-icon">
             <i class="fa fa-check-square"></i>
           </div>
@@ -186,8 +186,8 @@
             <p style="font-family: 'Anuphan', sans-serif; color: #000; font-size: 22px;">รักชาติ รักแผ่นดิน พร้อมเปลี่ยนแปลง</p>
           </div>
         </div>
-        <h1 class="left" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>ประชาธิปไตยเต็มใบ</b></h1>
-        <div class="features-desc left">
+        <h1 class="reveal" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>ประชาธิปไตยเต็มใบ</b></h1>
+        <div class="features-desc reveal">
           <div class="features-icon">
             <i class="fa fa-check-to-slot"></i>
           </div>
@@ -596,23 +596,9 @@
   transform: translateY(0);
   opacity: 1;
 }
-
-     
-.left{
-  position: relative;
-  transform: translateX(-1920px);
-  opacity: 0;
-  transition: 1s all ease;
-}
-
-.left.active{
-  transform: translateY(0);
-  opacity: 1;
-}
 </style>
 <script>
- 
-    function reveal() {
+function reveal() {
   var reveals = document.querySelectorAll(".reveal");
 
   for (var i = 0; i < reveals.length; i++) {
@@ -623,12 +609,11 @@
     if (elementTop < windowHeight - elementVisible) {
       reveals[i].classList.add("active");
     } else {
-      reveals[i].classList.add("active");
+      reveals[i].classList.remove("active");
     }
   }
 }
 
 window.addEventListener("scroll", reveal);
-
 
 </script>
