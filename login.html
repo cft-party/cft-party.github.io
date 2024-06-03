@@ -46,8 +46,7 @@
             <button class="btn" type="submit">เข้าสู่ระบบ</button>
     
             <div class="register-link">
-                <p>คุณเป็นสมาชิกพรรคเราหรือยัง? <a href="https://discord.gg/QCPfTfu5
-">สมัครสมาชิก</a></p>
+                <p>คุณเป็นสมาชิกพรรคเราหรือยัง? <a href="#">สมัครสมาชิก</a></p>
             </div>
         </form>
     </div>
@@ -59,8 +58,7 @@
     </div>
     
     <script>
-        
-    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
             event.preventDefault(); // Prevent the form from submitting the default way
             
             const memberId = document.getElementById('memberId').value;
@@ -71,6 +69,7 @@
                 alert('กรุณากรอกข้อมูลให้ครบถ้วน');
                 return;
             }
+
             // Validate the credentials
             const isValid = validCredentials.some(cred => cred.memberId === memberId && cred.password === password);
 
