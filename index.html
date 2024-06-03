@@ -161,15 +161,15 @@
     
   <!--Fratures-->
 
-  <section id="feature " class="reveal">
-    <div class="title-text ">
+  <section id="feature " class="">
+    <div class="title-text reveal">
       <p style="font-family: 'Anuphan', sans-serif; color: #ED0700 ;">เพื่อสร้างอนาคตไทยคือ<u style="color: #FF914D ;">ความหวัง</u></p>
       <h1 style="font-family: 'Anuphan', sans-serif;">เปลี่ยนความฝันเป็น<u style="color: var(--rd);">ความจริง</u></h1>
     </div>
     <div class="feature-box">
       <div class="features">
-        <h1 style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>วิสัยทัศน์พรรค</b></h1>
-        <div class="features-desc">
+        <h1 class="left" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>วิสัยทัศน์พรรค</b></h1>
+        <div class="features-desc left" >
           <div class="features-icon">
             <i class="fa fa-shield"></i>
           </div>
@@ -177,8 +177,8 @@
             <p style="font-family: 'Anuphan', sans-serif; color: #000; font-size: 22px;"><small>ความเชื่อมั่น ความมั่นคง ความอิสระ ความจริงใจ ความน่าเชื่อถือ เป็น </small><b><u style="cursor: pointer; color: var(--rd)">หัวใจของพรรค</u></b></p>
           </div>
         </div>
-        <h1 style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>อุดมการณ์</b></h1>
-        <div class="features-desc">
+        <h1 class="left" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>อุดมการณ์</b></h1>
+        <div class="features-desc left">
           <div class="features-icon">
             <i class="fa fa-check-square"></i>
           </div>
@@ -186,8 +186,8 @@
             <p style="font-family: 'Anuphan', sans-serif; color: #000; font-size: 22px;">รักชาติ รักแผ่นดิน พร้อมเปลี่ยนแปลง</p>
           </div>
         </div>
-        <h1 style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>ประชาธิปไตยเต็มใบ</b></h1>
-        <div class="features-desc">
+        <h1 class="left" style="font-family: 'Anuphan', sans-serif; color: #ED0700;"><b>ประชาธิปไตยเต็มใบ</b></h1>
+        <div class="features-desc left">
           <div class="features-icon">
             <i class="fa fa-check-to-slot"></i>
           </div>
@@ -196,7 +196,7 @@
           </div>
         </div>
       </div>
-      <div class="features-img">
+      <div class="features-img reveal">
         <img src="https://i.ibb.co/tXf8wCs/image-removebg-preview.png" alt="">
       </div>
     </div>
@@ -596,6 +596,19 @@
   transform: translateY(0);
   opacity: 1;
 }
+
+     
+.left{
+  position: relative;
+  transform: translateX(-150px);
+  opacity: 0;
+  transition: 1s all ease;
+}
+
+.left.active{
+  transform: translateY(0);
+  opacity: 1;
+}
 </style>
 <script>
     function reveal() {
@@ -615,5 +628,26 @@
 }
 
 window.addEventListener("scroll", reveal);
+
+</script>
+<script>
+    
+    function left() {
+  var lefts = document.querySelectorAll(".left");
+
+  for (var i = 0; i < lefts.length; i++) {
+    var windowHeight = window.innerHeight;
+    var elementLeft = lefts[i].getBoundingClientRect().left;
+    var elementVisible = 150;
+
+    if (elementLeft < windowHeight - elementVisible) {
+      lefts[i].classList.add("active");
+    } else {
+      lefts[i].classList.remove("active");
+    }
+  }
+}
+
+window.addEventListener("scroll", left);
 
 </script>
