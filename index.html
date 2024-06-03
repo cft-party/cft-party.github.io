@@ -51,8 +51,29 @@
   animation: animate-it linear;
   animation-timeline: --my-scroller;
 }
-        scroll-timeline: --my-scroller inline;
 
+p a {
+  background:
+    linear-gradient(
+      to right,
+      rgba(255, 0, 0, 1),
+      rgba(255, 0, 180, 1),
+      rgba(0, 100, 200, 1)
+      
+    ),
+    linear-gradient(
+      to right,
+      rgba(250, 0, 0, 1),
+      rgba(250, 0, 0, 1)
+  );
+  background-size: 100% 3px, 0 3px;
+  background-position: 100% 100%, 0 100%;
+  background-repeat: no-repeat;
+  transition: background-size 400ms;
+}
+p a:hover {
+  background-size: 0 3px, 100% 3px;
+}
     </style>
     <div id="progress"></div>
     <div class="MuiBox-root css-1ltj605 loader" id=""><span class="MuiCircularProgress-root MuiCircularProgress-indeterminate MuiCircularProgress-colorPrimary css-z01bqi" role="progressbar" style="width: 100px; height: 100px;"><svg class="MuiCircularProgress-svg css-13o7eu2" viewBox="22 22 44 44"><circle class="MuiCircularProgress-circle MuiCircularProgress-circleIndeterminate css-14891ef" cx="44" cy="44" r="20.2" fill="none" stroke-width="3.6"></circle></svg></span></div>
@@ -62,7 +83,7 @@
     </a>
     <div class="banner-text">
       <h1 style="font-family: 'Anuphan', sans-serif; font-weight: 700;">พรรคเพื่อสร้างอนาคตไทย</h1>
-      <p style="font-family: 'Anuphan', sans-serif;font-weight: 600;">ร่วมสร้างอนาคต เพื่อไทย ทุกคน</p>
+      <p class="a" style="font-family: 'Anuphan', sans-serif;font-weight: 600;"><a>ร่วมสร้างอนาคต เพื่อไทย ทุกคน</a></p>
       <div class="banner-btn">
         <a href="#member" ><span></span>กรรมการบริหาร</a>
         <a href="#footer"><span></span>ติดต่อ</a>
