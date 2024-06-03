@@ -1,12 +1,31 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="https://i.ibb.co/tXf8wCs/image-removebg-preview.png">
-    <title>welcome</title>
+    <title>หน้าหลัก</title>
+    <style>
+        /* Add your custom styles here */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
 </head>
 <body>
-    <h1>welcome</h1>
+    <h1 id="welcomeMessage">Welcome</h1>
+
+    <script>
+        window.addEventListener('load', function() {
+            const loggedInMemberId = sessionStorage.getItem('loggedInMemberId');
+            if (loggedInMemberId) {
+                document.getElementById('welcomeMessage').textContent = `Welcome ${loggedInMemberId}`;
+            } else {
+                // If no memberId is found, redirect back to the login page
+                window.location.href = 'index.html';
+            }
+        });
+    </script>
 </body>
 </html>
