@@ -783,7 +783,7 @@ footer .contain .contact .info li a{
 
 .logos-slide {
     display: inline-block;
-    animation: 35s marquee infinite linear;
+    animation: 35s marquee infinite cubic-bezier(0.4, 0, 1, 1);
 }
 @keyframes marquee {
   0% {
