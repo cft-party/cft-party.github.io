@@ -161,7 +161,7 @@ a .normal.btn:hover{
     background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 98, 0, 0.75), rgb(225, 0, 0)), url(https://prod-mfp-imgsrv.tillitsdone.com/uploads/medium_1_politics_aba5837765.jpg);
     
     background-size: cover;
-    background-position: top;
+    background-position: center;
 }
 
 .naa{
