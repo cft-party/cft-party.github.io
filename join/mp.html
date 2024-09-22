@@ -8,52 +8,39 @@
         .province { stroke: #000; stroke-width: 1; }
 </style>
 <script>
-        // ข้อมูล JSON ของจังหวัดและค่า number
-        const url = "https://script.google.com/macros/s/AKfycbz2B3XAppZHdgrE6ehR9R8zrYJrtNpbiPuiIyDjjvmz9HTPp90e251dAHMBXYobdGGZ/exec";
+// ฟังก์ชันคำนวณเปอร์เซนไทล์
+function calculatePercentile(value, data) {
+    data.sort((a, b) => a - b);  // เรียงข้อมูลจากน้อยไปมาก
+    let rank = data.indexOf(value) + 1;  // หาอันดับของค่าที่กำหนด
+    let percentile = (rank / data.length) * 100;  // คำนวณเปอร์เซนไทล์
+    return percentile;
+}
 
-          fetch(url)
-            .then(response => response.json())
-            .then(data => {
-              const provinces = data.records;
-              console.log(provinces); // Do something with the fetched provinces data
-            })
-            .catch(error => console.error('Error fetching the provinces:', error));
+// ฟังก์ชันกำหนดสีตามเปอร์เซนต์ไทล์
+function getColorByPercentile(percentile) {
+    if (percentile <= 20) {
+        return "#FFEDA0";  // สีที่แทนเปอร์เซนต์ไทล์ 0-20
+    } else if (percentile <= 40) {
+        return "#FEB24C";  // สีที่แทนเปอร์เซนต์ไทล์ 21-40
+    } else if (percentile <= 60) {
+        return "#FD8D3C";  // สีที่แทนเปอร์เซนต์ไทล์ 41-60
+    } else if (percentile <= 80) {
+        return "#FC4E2A";  // สีที่แทนเปอร์เซนต์ไทล์ 61-80
+    } else {
+        return "#E31A1C";  // สีที่แทนเปอร์เซนต์ไทล์ 81-100
+    }
+}
 
-        // ฟังก์ชันสำหรับการคำนวณเปอร์เซนไทล์
-        function calculatePercentiles(data) {
-            const numbers = data.map(d => d.number);
-            const sortedNumbers = [...numbers].sort((a, b) => a - b);
+// การใช้งานทั้งสองฟังก์ชันร่วมกัน
+let values = [10, 20, 30, 40, 50, 60, 70, 80, 90, 100];  // ข้อมูลตัวอย่าง
 
-            return data.map(d => {
-                const percentile = (sortedNumbers.indexOf(d.number) + 1) / sortedNumbers.length * 100;
-                return { ...d, percentile };
-            });
-        }
+values.forEach(value => {
+    let percentile = calculatePercentile(value, values);  // คำนวณเปอร์เซนไทล์ของแต่ละค่า
+    let color = getColorByPercentile(percentile);  // กำหนดสีตามเปอร์เซนต์ไทล์
+    console.log(`Value: ${value}, Percentile: ${percentile.toFixed(2)}, Color: ${color}`);
+});
 
-        // ฟังก์ชันกำหนดสีให้ตามเปอร์เซนต์ไทล์
-        function assignColorsToProvinces(data) {
-            data.forEach(d => {
-                const element = document.getElementById(d.province);
-                if (element) {
-                    if (d.percentile <= 20) {
-                        element.classList.add('color-1');
-                    } else if (d.percentile <= 40) {
-                        element.classList.add('color-2');
-                    } else if (d.percentile <= 60) {
-                        element.classList.add('color-3');
-                    } else if (d.percentile <= 80) {
-                        element.classList.add('color-4');
-                    } else {
-                        element.classList.add('color-5');
-                    }
-                }
-            });
-        }
-
-        // เรียกใช้ฟังก์ชัน
-        const provinceDataWithPercentiles = calculatePercentiles(provinces);
-        assignColorsToProvinces(provinceDataWithPercentiles);
-    </script>
+</script>
 
 <svg
    xmlns:mapsvg="http://mapsvg.com"
