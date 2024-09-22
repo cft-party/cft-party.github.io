@@ -39,12 +39,22 @@
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
         }
+        
         input[type="text"], input[type="password"] {
             width: -webkit-fill-available;
             padding: 10px;
             margin: 10px 0;
-            border: 1px solid #ccc;
-            border-radius: 5px;
+            border: none;
+            height: 30px;
+            border-bottom: 1px solid #093254;
+            background-color: transparent;
+            border-radius: 0;
+            color: #093254;
+        }
+        
+        input:focus{
+            outline: none;
+            border: none;  /* หรือ border: 0 เพื่อให้ไม่มีขอบ */
         }
         button {
             width: 100%;
