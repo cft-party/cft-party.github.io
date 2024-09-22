@@ -4,7 +4,126 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ค้นหาข้อมูลจังหวัด</title>
+    <link rel="icon" href="https://i.postimg.cc/4dfsfY2G/image.png">
     <style>
+        nav.top-nav{
+            overflow: hidden;
+            display: flex;
+            -webkit-box-pack: justify;
+            justify-content: space-around;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: 1rem;
+            position: fixed;
+            top: 0px;
+            left: 0px;
+            width: 100%;
+            z-index: 4;
+            transition: all 1s ease 0s;
+        }
+        
+        @media (max-width: 540px){
+            .menu{
+                display: none;
+            }
+            nav{
+        
+            }
+        }
+        
+        @media (max-width: 1100px){
+            .logo img{
+                height: 52px;
+            }
+        }
+        
+        
+        @media (max-width: 450px){
+            .logo img{
+                height: 52px;
+            }
+        }
+        
+        .nor{
+            position: relative;
+            font-size: 1.125rem;
+            font-family: Kanit;
+            font-weight: normal;
+            letter-spacing: 0rem;
+            display: inline-flex;
+            gap: 1.5rem;
+        }
+        
+        .nor > .items {
+            display: inline-flex;
+            gap: 1.5rem;
+        }
+        
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+        
+        a .normal{
+            color: rgb(255, 255, 255);
+            border: 1px solid transparent;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: .5rem;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: border .2s ease;
+        }
+        
+        a .normal:hover{
+            color: rgb(255, 255, 255);
+            border: 1px solid rgb(255, 255, 255);
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            padding: .5rem;
+            cursor: pointer;
+            border-radius: 12px;
+        }
+        
+        a .normal.btn{
+            background-color: rgb(255, 136, 81);
+            border: 1px solid transparent;
+            display: flex;
+            -webkit-box-align: center;
+            color: #fff;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.5s ease;
+            margin-right: 20px;
+        }
+        
+        
+        a .normal.btn:hover{
+            background-color: rgb(255, 30, 30);
+            border: 1px solid transparent;
+            display: flex;
+            -webkit-box-align: center;
+            align-items: center;
+            cursor: pointer;
+            border-radius: 12px;
+            transition: background-color 0.5s ease;
+        }
+        
+        .na{
+            min-height: 100vh;
+            max-height: 100vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 98, 0, 0.75), rgb(225, 0, 0)), url(https://prod-mfp-imgsrv.tillitsdone.com/uploads/medium_1_politics_aba5837765.jpg);
+            
+            background-size: cover;
+            background-position: center;
+        }
+        
+        .naa{
+            padding: 64px 0 0 0;
+        }
         table {
             width: 100%;
             border-collapse: collapse;
@@ -30,7 +149,21 @@
     </style>
 </head>
 <body>
-
+    <nav class="top-nav scroll-false actin" style="background: linear-gradient(45deg, #e10000, #ff3d00, #ff6200);">
+        <div style="cursor: pointer;" class="logo">
+            <img src="https://i.postimg.cc/NffWn7hQ/image.png" height="52px">
+        </div>
+        <div class="menu">
+            <div class="nor">
+                <div class="items">
+                    <a href="https://script.google.com/macros/s/AKfycbwBNs9k3KM1vlCcqu3jMbBPyn-23m-vH6G-Ffkfd8D-5O1dGe-uE7OFLrsGoCYf3nf3yw/exec">
+                        <div class="normal">สมัครสมาชิกพรรค</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    
 <h2>ข้อมูลจังหวัด</h2>
 <input type="text" id="search" placeholder="ค้นหาจังหวัด...">
 
