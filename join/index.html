@@ -21,10 +21,51 @@
     <link rel="stylesheet" href="https://ftp-roblox.pages.dev/footer.css">
     <link rel="stylesheet" href="https://ftp-roblox.pages.dev/num.css">
     <link rel="stylesheet" href="https://ftp-roblox.pages.dev/animate.css">
-
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"], input[type="password"] {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .error {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
     <title>เข้าสู่ระบบสมาชิกพรรคเพื่อสร้างอนาคตไทย</title>
 </head>
-<body>
+<body onload="fetchData()">
     <nav class="top-nav scroll-false actin" style="background: linear-gradient(45deg, #e10000, #ff3d00, #ff6200);">
         <div style="cursor: pointer;" class="logo">
             <img src="https://i.postimg.cc/NffWn7hQ/image.png" height="52px">
@@ -39,5 +80,41 @@
             </div>
         </div>
     </nav>
+
+    <div class="login-container">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <input type="text" id="username" placeholder="Username" required>
+            <input type="password" id="password" placeholder="Password" required>
+            <button type="submit">Login</button>
+            <div class="error" id="errorMessage"></div>
+        </form>
+    </div>
+    
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault();
+        const username = document.getElementById('username').value;
+        const password = document.getElementById('password').value;
+        
+        fetch('https://script.google.com/macros/s/AKfycbzuawPpGx_0abPddJqAqs6eEGo5-dMj__au5Lp1F21vi60ESSbSOX1yL-8neMDuW8utoQ/exec?action=getUsers')
+        .then(response => response.json())
+        .then(data => {
+            const user = data.find(user => user.username === username && user.password === password);
+            if (user) {
+                // ถ้า login สำเร็จจะเปลี่ยนไปยังหน้า mp.html
+                window.location.href = "https://ftp-roblox.pages.dev/join/mp.html";  
+            } else {
+                // ถ้า login ไม่สำเร็จจะแสดงข้อความ error
+                document.getElementById('errorMessage').textContent = 'ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง';
+            }
+        })
+        .catch(error => {
+            console.error('Error fetching user data:', error);
+            document.getElementById('errorMessage').textContent = 'เกิดข้อผิดพลาดระหว่างการล็อกอิน';
+        });
+    });
+    
+    </script>
 </body>
 </html>
