@@ -7,6 +7,49 @@
         .color-5 { fill: #045a8d; } /* 80-100% */
         .province { stroke: #000; stroke-width: 1; }
 </style>
+<script>
+        // ข้อมูล JSON ของจังหวัดและค่า number
+        const provinces = [
+            {"value":1,"province":"กรุงเทพมหานคร","region":"ภาคกลาง","number":0},{"value":2,"province":"สมุทรปราการ","region":"ภาคกลาง","number":0},{"value":3,"province":"นนทบุรี","region":"ภาคกลาง","number":0},{"value":4,"province":"ปทุมธานี","region":"ภาคกลาง","number":0},{"value":5,"province":"พระนครศรีอยุธยา","region":"ภาคกลาง","number":0},{"value":6,"province":"อ่างทอง","region":"ภาคกลาง","number":0},{"value":7,"province":"ลพบุรี","region":"ภาคกลาง","number":0},{"value":8,"province":"สิงห์บุรี","region":"ภาคกลาง","number":0},{"value":9,"province":"ชัยนาท","region":"ภาคกลาง","number":0},{"value":10,"province":"สระบุรี","region":"ภาคกลาง","number":0},{"value":11,"province":"ชลบุรี","region":"ภาคตะวันออก","number":0},{"value":12,"province":"ระยอง","region":"ภาคตะวันออก","number":0},{"value":13,"province":"จันทบุรี","region":"ภาคตะวันออก","number":0},{"value":14,"province":"ตราด","region":"ภาคตะวันออก","number":0},{"value":15,"province":"ฉะเชิงเทรา","region":"ภาคตะวันออก","number":0},{"value":16,"province":"ปราจีนบุรี","region":"ภาคตะวันออก","number":0},{"value":17,"province":"นครนายก","region":"ภาคตะวันออก","number":0},{"value":18,"province":"สระแก้ว","region":"ภาคตะวันออก","number":0},{"value":19,"province":"นครราชสีมา","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":20,"province":"บุรีรัมย์","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":21,"province":"สุรินทร์","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":22,"province":"ศรีสะเกษ","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":23,"province":"อุบลราชธานี","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":24,"province":"ยโสธร","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":25,"province":"ชัยภูมิ","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":26,"province":"อำนาจเจริญ","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":27,"province":"บึงกาฬ","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":28,"province":"หนองบัวลำภู","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":29,"province":"ขอนแก่น","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":30,"province":"อุดรธานี","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":31,"province":"เลย","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":32,"province":"หนองคาย","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":33,"province":"มหาสารคาม","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":34,"province":"ร้อยเอ็ด","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":35,"province":"กาฬสินธุ์","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":36,"province":"สกลนคร","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":37,"province":"นครพนม","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":38,"province":"มุกดาหาร","region":"ภาคตะวันออกเฉียงเหนือ","number":0},{"value":39,"province":"เชียงใหม่","region":"ภาคเหนือ","number":1},{"value":40,"province":"ลำพูน","region":"ภาคเหนือ","number":0},{"value":41,"province":"ลำปาง","region":"ภาคเหนือ","number":0},{"value":42,"province":"อุตรดิตถ์","region":"ภาคเหนือ","number":0},{"value":43,"province":"แพร่","region":"ภาคเหนือ","number":0},{"value":44,"province":"น่าน","region":"ภาคเหนือ","number":0},{"value":45,"province":"พะเยา","region":"ภาคเหนือ","number":0},{"value":46,"province":"เชียงราย","region":"ภาคเหนือ","number":0},{"value":47,"province":"แม่ฮ่องสอน","region":"ภาคเหนือ","number":0},{"value":48,"province":"นครสวรรค์","region":"ภาคกลาง","number":0},{"value":49,"province":"อุทัยธานี","region":"ภาคกลาง","number":0},{"value":50,"province":"กำแพงเพชร","region":"ภาคกลาง","number":0},{"value":51,"province":"ตาก","region":"ภาคตะวันตก","number":0},{"value":52,"province":"สุโขทัย","region":"ภาคกลาง","number":0},{"value":53,"province":"พิษณุโลก","region":"ภาคกลาง","number":0},{"value":54,"province":"พิจิตร","region":"ภาคกลาง","number":0},{"value":55,"province":"เพชรบูรณ์","region":"ภาคกลาง","number":0},{"value":56,"province":"ราชบุรี","region":"ภาคตะวันตก","number":0},{"value":57,"province":"กาญจนบุรี","region":"ภาคตะวันตก","number":0},{"value":58,"province":"สุพรรณบุรี","region":"ภาคกลาง","number":0},{"value":59,"province":"นครปฐม","region":"ภาคกลาง","number":0},{"value":60,"province":"สมุทรสาคร","region":"ภาคกลาง","number":0},{"value":61,"province":"สมุทรสงคราม","region":"ภาคกลาง","number":0},{"value":62,"province":"เพชรบุรี","region":"ภาคตะวันตก","number":0},{"value":63,"province":"ประจวบคีรีขันธ์","region":"ภาคตะวันตก","number":0},{"value":64,"province":"นครศรีธรรมราช","region":"ภาคใต้","number":0},{"value":65,"province":"กระบี่","region":"ภาคใต้","number":0},{"value":66,"province":"พังงา","region":"ภาคใต้","number":0},{"value":67,"province":"ภูเก็ต","region":"ภาคใต้","number":0},{"value":68,"province":"สุราษฎร์ธานี","region":"ภาคใต้","number":0},{"value":69,"province":"ระนอง","region":"ภาคใต้","number":0},{"value":70,"province":"ชุมพร","region":"ภาคใต้","number":0},{"value":71,"province":"สงขลา","region":"ภาคใต้","number":0},{"value":72,"province":"สตูล","region":"ภาคใต้","number":0},{"value":73,"province":"ตรัง","region":"ภาคใต้","number":0},{"value":74,"province":"พัทลุง","region":"ภาคใต้","number":0},{"value":75,"province":"ปัตตานี","region":"ภาคใต้","number":0},{"value":76,"province":"ยะลา","region":"ภาคใต้","number":0},{"value":77,"province":"นราธิวาส","region":"ภาคใต้","number":0}
+            // จาก https://script.google.com/macros/s/AKfycbz2B3XAppZHdgrE6ehR9R8zrYJrtNpbiPuiIyDjjvmz9HTPp90e251dAHMBXYobdGGZ/exec
+                
+        ];
+
+        // ฟังก์ชันสำหรับการคำนวณเปอร์เซนไทล์
+        function calculatePercentiles(data) {
+            const numbers = data.map(d => d.number);
+            const sortedNumbers = [...numbers].sort((a, b) => a - b);
+
+            return data.map(d => {
+                const percentile = (sortedNumbers.indexOf(d.number) + 1) / sortedNumbers.length * 100;
+                return { ...d, percentile };
+            });
+        }
+
+        // ฟังก์ชันกำหนดสีให้ตามเปอร์เซนต์ไทล์
+        function assignColorsToProvinces(data) {
+            data.forEach(d => {
+                const element = document.getElementById(d.province);
+                if (element) {
+                    if (d.percentile <= 20) {
+                        element.classList.add('color-1');
+                    } else if (d.percentile <= 40) {
+                        element.classList.add('color-2');
+                    } else if (d.percentile <= 60) {
+                        element.classList.add('color-3');
+                    } else if (d.percentile <= 80) {
+                        element.classList.add('color-4');
+                    } else {
+                        element.classList.add('color-5');
+                    }
+                }
+            });
+        }
+
+        // เรียกใช้ฟังก์ชัน
+        const provinceDataWithPercentiles = calculatePercentiles(provinces);
+        assignColorsToProvinces(provinceDataWithPercentiles);
+    </script>
 
 <svg
    xmlns:mapsvg="http://mapsvg.com"
