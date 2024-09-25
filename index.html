@@ -256,6 +256,25 @@ p a:hover {
                       </div>
                   </div>
               </div>
+                <div class="row">
+                  <div class="column">
+                      <div class="goal">
+                          
+                          <!-- ชื่อเป้าหมาย -->
+                          <div class="progress-label">เป้าหมายของเรา</div>
+                          <!-- ข้อความจำนวนเป้าหมาย -->
+                          <div class="target-text">100,000 คน</div>
+                        </div>
+                    
+                          <!-- แถบโปรเกรส -->
+                          <div class="progress-container">
+                              <div class="progress-bar" style="width: 79%;">
+                                  <!-- โลโก้ที่แสดงอยู่ในแถบ -->
+                                  <img src="https://i.postimg.cc/2SWcbh90/image.png" alt="logo">
+                              </div>
+                        </div>
+                  </div>
+              </div>
             </div>
           </div>
     </div>
@@ -577,3 +596,48 @@ function reveal() {
 window.addEventListener("scroll", reveal);
 
 </script>
+
+    <style>
+    	.goal{
+    		display: flex;
+    		width: -webkit-fill-available;
+            justify-content: space-between;
+        }
+        /* กำหนดรูปแบบแถบโปรเกรส */
+        .progress-container {
+    		width: -webkit-fill-available;
+            background: linear-gradient(to left, #ff9710, #ff4910);
+            padding: 5px;
+            position: relative;
+    		margin-top: 1em;
+            border: 2px solid white; /* กรอบสีขาว */
+    		width: -webkit-fill-available;
+        }
+
+        .progress-bar {
+            height: 30px;
+            background: #fff; /* ไล่สีแบบ gradient */
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .progress-bar img {
+            height: 50px;
+            margin-right: -30px; /* ระยะห่างโลโก้กับขอบ */
+        }
+
+        /* ข้อความเป้าหมาย */
+        .target-text {
+            color: #ff5100;
+            font-weight: bold;
+            font-size: 20px;
+        }
+
+        /* ข้อความเป้าหมายซ้าย */
+        .progress-label {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #1f2b40;
+        }
+    </style>
