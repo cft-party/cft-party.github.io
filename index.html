@@ -249,36 +249,9 @@ p a:hover {
                               // เรียกใช้ครั้งแรกเมื่อโหลดหน้า
                               updateTime();
                           </script>
-                          <div class="m-number" id="member"></div>
+                          <div class="m-number" id="member">9 คน</div>
                           <h3 style="margin-top: 10px;">คณะกรรมการบริหารพรรค</h3>
-                          <div class="c-number" id="committee"></div>
-                          <script>
-                            // ฟังก์ชันในการดึงข้อมูลจาก API
-                            async function fetchData() {
-                                try {
-                                    // เรียก API
-                                    const response = await fetch('https://script.google.com/macros/s/AKfycbxAstHWalTG5Q2h9X_uxLAZiei2xgjmhUmFVuM-nNm1VVPHgIpDUOOfrBCT6mMOlSehiA/exec?action=getUsers');
-                                    
-                                    // ตรวจสอบว่ามีการตอบกลับสำเร็จหรือไม่
-                                    if (!response.ok) {
-                                        throw new Error('Network response was not ok');
-                                    }
-                    
-                                    // แปลงผลลัพธ์เป็น JSON
-                                    const data = await response.json();
-                    
-                                    // ใส่ข้อมูลจาก A2 ลงใน member และ B2 ลงใน committee
-                                    document.getElementById('member').innerText = data.A2 || "";  
-                                    document.getElementById('committee').innerText = data.B2 || "";  
-                    
-                                } catch (error) {
-                                    console.error('There was a problem with the fetch operation:', error);
-                                }
-                            }
-                    
-                            // เรียกฟังก์ชันในการดึงข้อมูลจาก API โดยไม่ต้องรีเฟรชหน้า
-                            fetchData();
-                        </script>
+                          <div class="c-number" id="committee">5 คน</div>
                       </div>
                   </div>
               </div>
