@@ -24,6 +24,9 @@ header {
   background-color: rgb(255, 98, 0);
   padding: 20px 0;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+    position: fixed;
+    width: 100%;
 }
 
 header .logo {
@@ -65,11 +68,17 @@ nav ul li a:hover {
 }
 
 /* Hero Section */
+
 .hero {
-  background-color: rgb(225, 0, 0);
-  color: white;
-  text-align: center;
-  padding: 100px 0;
+    background: linear-gradient(rgba(0, 0, 0, 0.25), rgba(255, 98, 0, 0.75), rgb(225, 0, 0)), url(https://media.istockphoto.com/id/511061090/photo/business-office-building-in-london-england.jpg?s=612x612&w=0&k=20&c=nYAn4JKoCqO1hMTjZiND1PAIWoABuy1BwH1MhaEoG6w=);
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    color: white;
+    height: 100vh;
+    display: flex;
+    margin: auto 0;
+    align-items: center;
 }
 
 .hero h2 {
