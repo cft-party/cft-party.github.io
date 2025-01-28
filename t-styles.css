@@ -238,6 +238,13 @@ footer .footer-bottom {
 }
 
 /* Menu Button Styles */
+
+header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
 .menu-btn {
   display: none;
   cursor: pointer;
