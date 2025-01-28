@@ -236,68 +236,22 @@ footer .footer-bottom {
   0% { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-/* Header Styles */
-header .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-header .logo {
-  display: flex;
-  align-items: center;
-}
-
-header .logo img {
-  height: 50px;
-  margin-right: 10px;
-}
-
-header .logo h1 {
-  color: white;
-  font-size: 24px;
-  margin: 0;
-}
-
-nav ul.nav-links {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-}
-
-nav ul.nav-links li {
-  margin-left: 20px;
-}
-
-nav ul.nav-links li a {
-  color: white;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-nav ul.nav-links li a:hover {
-  text-decoration: underline;
-}
 
 /* Menu Button Styles */
 .menu-btn {
   display: none;
-  flex-direction: column;
   cursor: pointer;
 }
 
-.menu-btn__line {
-  width: 25px;
-  height: 3px;
-  background-color: white;
-  margin: 4px 0;
+.menu-btn img.menu-icon {
+  width: 30px;
+  height: 30px;
 }
 
 /* Responsive Styles */
 @media screen and (max-width: 768px) {
   .menu-btn {
-    display: flex;
+    display: block;
   }
 
   nav ul.nav-links {
