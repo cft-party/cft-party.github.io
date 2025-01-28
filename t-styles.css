@@ -174,7 +174,7 @@ footer .footer-logo p {
 
 footer .container {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
 }
 
 footer .footer-links ul {
